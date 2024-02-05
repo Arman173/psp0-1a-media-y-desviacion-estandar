@@ -1,10 +1,10 @@
 #include "displays.h"
 using namespace std;
 
-// definimos la funcion que despliega la pantalla inicial del programa.
+// definimos la funcion que despliega la pantalla de error por opcion invalida.
 void error_option()
 {
-     system("cls");
+     system("cls"); // limpiamos pantalla.
      cout << endl
           << tab;
      cout << "CALCULO MEDIA Y DESVIACION ESTANDAR";

@@ -33,7 +33,7 @@ int main()
             break;
         }
 
-        if (state = SUCCESS_STATE)
+        if (state == SUCCESS_STATE)
             show_results(list);
         else if (state == ERROR_STATE)
             error_getting_data();

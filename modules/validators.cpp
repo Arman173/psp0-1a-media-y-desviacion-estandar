@@ -1,6 +1,7 @@
 #include "validators.h"
 using namespace std;
 
+// convierte un string a flotante, true si hubo exito.
 bool convertStrToFloat(string str, float *number)
 {
     bool converted = false;
@@ -21,11 +22,12 @@ bool convertStrToFloat(string str, float *number)
     return converted;
 }
 
-bool getting_data_from_file(ifstream file, float_list list)
+// rellenamos una lista de flotantes con informacion guardada en un archivo.
+bool getting_data_from_file(ifstream *file, float_list *list)
 {
-    bool state = true; // bansera que guarda si hubo un error al leer el archivo.
+    bool state = true; // bandera que guarda si hubo un error al leer el archivo.
     string str;        // string que sera un buffer para guardar el contenido del archivo.
-    while (getline(file, str))
+    while (getline(*file, str))
     {
         float n;
         if (!convertStrToFloat(str, &n))
@@ -33,7 +35,7 @@ bool getting_data_from_file(ifstream file, float_list list)
             state = false;
             break;
         }
-        list.push(n);
+        list->push(n);
     }
     return state;
 }

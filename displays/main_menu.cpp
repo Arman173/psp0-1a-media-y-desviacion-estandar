@@ -1,10 +1,10 @@
 #include "displays.h"
 using namespace std;
 
-// definimos la funcion que despliega la pantalla inicial del programa.
+// definimos la funcion que despliega la pantalla del menu principal.
 void main_menu()
 {
-     system("cls");
+     system("cls"); // limpiamos pantalla.
      cout << endl
           << tab;
      cout << "CALCULO MEDIA Y DESVIACION ESTANDAR";

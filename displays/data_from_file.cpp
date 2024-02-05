@@ -1,10 +1,11 @@
 #include "displays.h"
 using namespace std;
 
-// definimos la funcion que despliega la pantalla inicial del programa.
+// definimos la funcion que despliega la pantalla para cargar datos desde un archivo.
 int data_from_file(float_list *list)
 {
-    system("cls");
+    system("cls");    // limpiamos pantalla.
+    string file_name; // string para guardar el nombre del archivo a buscar.
     cout << endl
          << tab;
     cout << "CALCULO MEDIA Y DESVIACION ESTANDAR";
@@ -16,12 +17,21 @@ int data_from_file(float_list *list)
     cout << tab << "archivo se encuentre en el mismo directorio del programa." << endl;
     cout << endl
          << tab;
-    cout << "Introduzca el nombre:" << endl;
+    cout << "Introduzca el nombre: ";
+    cin >> file_name;         // capturamos el nombre del archivo.
+    ifstream file(file_name); // abrimos el archivo.
+    if (!file.is_open())
+    {
+         return ERROR_STATE; // error al abrir el archivo.
+    }
+    if (!getting_data_from_file(&file, list))
+    {
+         return ERROR_STATE; // error al leer algun dato del archivo.
+    }
     cout << endl
+         << endl
          << tab;
-    cout << tab << "1 - cargar datos desde un archivo" << endl;
-    cout << tab << "2 - Introducir los datos manualmente" << endl;
-    cout << tab << "0 - salir del programa";
+    cout << tab << "Datos cargados correctamente.";
     cout << endl
          << endl
          << endl
