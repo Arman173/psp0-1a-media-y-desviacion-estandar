@@ -15,29 +15,17 @@ class float_list
 {
 private:
     /* data */
-    unsigned int length;
+    int length;
     Node *root;
     Node *last;
 
 public:
     float_list(/* args */);
     ~float_list();
-    unsigned int size();
+    int size();
     bool push(float);
     void clear();
-    float &operator[](int);
+    float element(int);
 };
-
-float_list::float_list(/* args */)
-{
-    this->length = 0;
-    this->root = NULL;
-    this->last = NULL;
-}
-
-float_list::~float_list()
-{
-    this->clear();
-}
 
 #endif

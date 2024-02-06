@@ -4,7 +4,7 @@
 #include <cmath>
 #include "float_list.h"
 
-float average(float_list);
-float standard_deviation(float_list);
+float average(float_list *);
+float standard_deviation(float_list *);
 
 #endif
